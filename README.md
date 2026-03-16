@@ -1,26 +1,22 @@
-# Practicum-II-Real-Estate-ROI
+# Real Estate ROI Prediction Model
+Master's Practicum II - [Barsha Kakshapati]
 
-# Project Proposal: Data Sources Section
+## Data Sources & Access
+This project integrates three primary datasets using 5-digit Zip Codes as the joining key.
 
+### 1. Market Price Data (Target)
+* **Source:** Zillow Research (ZHVI All Homes Time Series)
+* **File:** `zillow_data_clean.csv`
+* **Access Note:** Due to GitHub's file size limits, this file is hosted externally. 
+* **Download Link:** [Zillow Research Data](https://www.zillow.com/research/data/)
 
-Data Sources & Integration Plan
-This project utilizes a multi-dimensional dataset integrated at the Zip Code (ZCTA) level to predict real estate ROI. The data architecture consists of three primary layers:
+### 2. Educational Infrastructure (Predictor)
+* **Source:** National Center for Education Statistics (NCES)
+* **File:** `school_data.csv` (Uploaded)
 
-Market Price Layer (Target Variable): >     * Source: Zillow Home Value Index (ZHVI)
+### 3. Socio-Economic Baseline (Predictor)
+* **Source:** US Census Bureau (ACS 5-Year Estimates, Table B19013)
+* **File:** `ACSDT5Y2024.B19013-Data.csv` (Uploaded)
 
-Details: Monthly time-series data representing the typical home value for all homes in a given Zip Code, smoothed and seasonally adjusted.
-
-Educational Infrastructure Layer (Predictor):
-
-Source: National Center for Education Statistics (NCES) - ELSI (2024-2025)
-
-Details: Public school directory data including school names, district (agency) names, and enrollment totals to assess neighborhood infrastructure density.
-
-Socio-Economic Layer (Predictor):
-
-Source: US Census Bureau, American Community Survey (ACS) 5-Year Estimates (Table B19013)
-
-Details: Median Household Income by Zip Code Tabulation Area (ZCTA). This provides the economic baseline to correlate neighborhood wealth with property appreciation.
-
-Integration Strategy:
-All datasets will be programmatically joined in Python using a left-join on the 5-digit Zip Code. Data cleaning will involve handling the multi-row headers in Census data and aggregating school-level counts to a Zip Code-level summary.
+## Integration Plan
+Data will be processed in Python using Pandas to merge economic and educational indicators with housing price trends to identify high-ROI investment zones.
